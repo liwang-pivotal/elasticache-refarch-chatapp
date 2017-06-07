@@ -1,6 +1,6 @@
 applications:
 - name: redis-chat-demo
-  mem: 512
+  mem: 1G
   buildpack: nodejs_buildpack
   services:
   - test-redis
