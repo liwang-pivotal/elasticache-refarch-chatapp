@@ -18,8 +18,8 @@ var port = process.env.PORT || 3000;
 
 var Redis = require('ioredis');
 //var redis_address = 'redis://127.0.0.1:6379';
-var redis_cred = JSON.parse(process.env.VCAP_SERVICES)["p.redis"][0]["credentials"];
-var redis_address = "redis://:"+redis_cred["password"]+"@"+redis_cred["host"]+":"+redis_cred["port"]
+var redis_cred = JSON.parse(process.env.VCAP_SERVICES)["redislabs"][0]["credentials"];
+var redis_address = "redis://:"+redis_cred["password"]+"@"+redis_cred["ip_list"][0]+":"+redis_cred["port"]
 
 var redis = new Redis(redis_address);
 var redis_subscribers = {};
